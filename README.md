@@ -27,30 +27,30 @@ Perl and R need to be installed for you system
        
             [parameters]
             -a      <S> full path of input fq file 1
-            -b      \<S\> full path of input fq file 2
-            -A1     \<S\> adaptor list file 1
-            -A2     \<S\> adaptor list file 2
-            -i      \<S\> single reads with FA format file
-            -o      \<S\> output directory path
-            -n      \<S\> sample name, used for prefix of ouput file
-            -t      \<S\> gene type. e.g. TRB, IGH
-            -k      \<I\> read length [100]
+            -b      <S> full path of input fq file 2
+            -A1     <S> adaptor list file 1
+            -A2     <S> adaptor list file 2
+            -i      <S> single reads with FA format file
+            -o      <S> output directory path
+            -n      <S> sample name, used for prefix of ouput file
+            -t      <S> gene type. e.g. TRB, IGH
+            -k      <I> read length [100]
 
-            -d      \<F\> add the paremeter means consider D genes for analysis. For IGH,TRB is necessary
-            -jif    \<I\> J alignment identity for filtering,for C region sequenced,10 is recommended, or 80 is recommended[10]
-            -vif    \<I\> V alignment identity for filtering [80]
-            -r      \<S\> The reference directory [Bin/Ref/gene_type]
-            -Q      \<I\> sequencing quality for filtering [15]
-            -RQ     \<Fl\> qulity filter rate, used with -Q [0.05]
-            -f1     \<I\> CDR3(nucleotide) abundance filter [0]
-            -f2     \<I\> Clonotype(nucleotide, ful-length) abundance filter [0]
+            -d      <F> add the paremeter means consider D genes for analysis. For IGH,TRB is necessary
+            -jif    <I> J alignment identity for filtering,for C region sequenced,10 is recommended, or 80 is recommended[10]
+            -vif    <I> V alignment identity for filtering [80]
+            -r      <S> The reference directory [Bin/Ref/gene_type]
+            -Q      <I> sequencing quality for filtering [15]
+            -RQ     <Fl> qulity filter rate, used with -Q [0.05]
+            -f1     <I> CDR3(nucleotide) abundance filter [0]
+            -f2     <I> Clonotype(nucleotide, ful-length) abundance filter [0]
             -m          logical value, used to analyze hyper-mutation
             -ew         logical value, sequencing error correction for whole sequence. but this need a long time to run,only for FASTQ files as input
             -ec         logical value, sequencing error correction for only CDR3.only for FAST
             Q files as input
-            -v      \<I\> used to calculate the base quality [64]
+            -v      <I> used to calculate the base quality [64]
 
-            -mul    \<I\> split the fa into multiple parts for alignment [3]
+            -mul    <I> split the fa into multiple parts for alignment [3]
             -Rs     the R script directory.for a new system, this parameter is need to change[/opt/blc/genome/biosoft/R/bin/Rscript]
             -h      print help information
 
@@ -69,14 +69,14 @@ Perl and R need to be installed for you system
 
 ###2. Run shell
    
-   2.1 it can easy to run the general sh in Bin/ directory 'Execute_all.sh': sh Execute_all.sh
-   2.2 run multiple shells in Bin/ directory seperately,so the *.blast.sh could be run in parallel.
+   2.1. it can easy to run the general sh in Bin/ directory 'Execute_all.sh': sh Execute_all.sh
+   2.2. run multiple shells in Bin/ directory seperately,so the *.blast.sh could be run in parallel.
             sh *.merge_fq_fq2fa.sh
             sh *.blast.*.sh
             sh *.structure.sh
             sh *.statistics.graph.sh
             sh *.rm.intermediate.file.sh
-   2.3 some warning is normal when run blast alignment because of blast parameter setting. such as "[blastall] WARNING: Could not calculate ungapped Karlin-Altschul parameters due to an invalid query sequence or its translation. Please verify the query sequence(s) and/or filtering options".`
+   2.3. some warning is normal when run blast alignment because of blast parameter setting. such as "[blastall] WARNING: Could not calculate ungapped Karlin-Altschul parameters due to an invalid query sequence or its translation. Please verify the query sequence(s) and/or filtering options".`
 
 # Output
 
