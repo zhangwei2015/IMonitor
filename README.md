@@ -26,7 +26,7 @@ Perl and R need to be installed for you system
    this step will create multiple directory and shells in Bin/
        
             [parameters]
-            -a      \<S\> full path of input fq file 1
+            -a      <S> full path of input fq file 1
             -b      \<S\> full path of input fq file 2
             -A1     \<S\> adaptor list file 1
             -A2     \<S\> adaptor list file 2
@@ -69,7 +69,7 @@ Perl and R need to be installed for you system
 
 ###2. Run shell
    
-   `2.1 it can easy to run the general sh in Bin/ directory 'Execute_all.sh': sh Execute_all.sh
+   2.1 it can easy to run the general sh in Bin/ directory 'Execute_all.sh': sh Execute_all.sh
    2.2 run multiple shells in Bin/ directory seperately,so the *.blast.sh could be run in parallel.
             sh *.merge_fq_fq2fa.sh
             sh *.blast.*.sh
