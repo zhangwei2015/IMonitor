@@ -24,8 +24,8 @@ Perl and R need to be installed for you system
         all the parameters have the detail introduction if you run "perl IMonitor.pl"
    this step will create multiple directory and shells in Bin/
         [parameters]
-            -a      <S> full path of input fq file 1
-            -b      <S> full path of input fq file 2
+            \-a      <S> full path of input fq file 1
+            \-b      <S> full path of input fq file 2
             -A1     <S> adaptor list file 1
             -A2     <S> adaptor list file 2
             -i      <S> single reads with FA format file
