@@ -53,7 +53,7 @@ Perl and R need to be installed for you system
             -Rs     the R script directory.for a new system, this parameter is need to change[/opt/blc/genome/biosoft/R/bin/Rscript]
             -h      print help information
 
-Note
+            Note
             1. If  Pair-end(PE) sequencing FASTQ format as input, then:
                     perl IMonitor.pl
                     Compulsory: -a -b -A1 -A2 -o -n -t
@@ -63,20 +63,20 @@ Note
                     Compulsory: -i -o -n -t
                     Optionally: others, but -ew,-ec are invalid here
 
-            Note: if sequence C region, -jif 10 is recommended, or -jif 80 is recommended
+            3. if sequence C region, -jif 10 is recommended, or -jif 80 is recommended
               The rate of IMonitor output is multipled 100%
 
 
    2. Run shell
-   2.1 it can easy to run the general sh in Bin/ directory 'Execute_all.sh': sh Execute_all.sh
-   2.2 run multiple shells in Bin/ directory seperately,so the *.blast.sh could be run in parallel.
+      2.1 it can easy to run the general sh in Bin/ directory 'Execute_all.sh': sh Execute_all.sh
+      2.2 run multiple shells in Bin/ directory seperately,so the *.blast.sh could be run in parallel.
         sh *.merge_fq_fq2fa.sh
         sh *.blast.*.sh
         sh *.structure.sh
         sh *.statistics.graph.sh
         sh *.rm.intermediate.file.sh
 
-   2.3 some warning is normal when run blast alignment because of blast parameter setting. such as "[blastall] WARNING: Could not calculate ungapped Karlin-Altschul parameters due to an invalid query sequence or its translation. Please verify the query sequence(s) and/or filtering options".
+      2.3 some warning is normal when run blast alignment because of blast parameter setting. such as "[blastall] WARNING: Could not calculate ungapped Karlin-Altschul parameters due to an invalid query sequence or its translation. Please verify the query sequence(s) and/or filtering options".
 
 # Output
 
