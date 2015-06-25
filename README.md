@@ -1,21 +1,21 @@
 Manual of IMonitor
-===
-#Introduction
+=====
+# Introduction
 
 IMonitor - analyze the sequence data of immune repertoire sequenced by NGS. If paired-end reads(FASTQ) as input, it will be merged to single sequence according to overlap region. FASTA sequence as input is acceptable. It provides re-alignment algorithm to identify accurately V,D,J alleles.Sequencing error will be corrected. CDR3 region, deletion/insertion of VDJ will be identied and translate nucleotide into amino acid. Multiple statistics and graphs will be provied.
 
-#System Requirement
+# System Requirement
 
 It runs on 64-bit Linux systems. for 1Gb raw data as input, about maximum 2Gb memory would be required.
 Perl and R need to be installed for you system
 
-#Installation
+# Installation
 
    1. Before use it, perl(https://www.perl.org/get.html)
    2. Before use it,R(http://www.r-project.org/) need to be installed. and provide the installation paths for parameter -Rs
    3. Download the IMonitor.tar.gz to your directory, uncompress it.
 
-#Usage
+# Usage
 
    1. Create shell
    perl IMonitor.pl
@@ -77,7 +77,7 @@ Note
 
    2.3 some warning is normal when run blast alignment because of blast parameter setting. such as "[blastall] WARNING: Could not calculate ungapped Karlin-Altschul parameters due to an invalid query sequence or its translation. Please verify the query sequence(s) and/or filtering options".
 
-#Output
+# Output
 
    1. Directory
         --Bin
@@ -147,7 +147,7 @@ Note
         2.2 Figures/*_overall_plot.pdf
         a general display for the statistics.
 
-#Testing
+# Testing
 
       directory Test/ has a data for testing
       FQ_run.sh:
