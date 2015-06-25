@@ -52,16 +52,16 @@ Perl and R need to be installed for you system
             -h      print help information
 
 Note
-            #1. If  Pair-end(PE) sequencing FASTQ format as input, then:
+            1. If  Pair-end(PE) sequencing FASTQ format as input, then:
                     perl IMonitor.pl
                     Compulsory: -a -b -A1 -A2 -o -n -t
                     Optionally: others
-            #2. If Single-end(SE) sequencing FASTA format as input, then:
+            2. If Single-end(SE) sequencing FASTA format as input, then:
                     perl IMonitor.pl
                     Compulsory: -i -o -n -t
                     Optionally: others, but -ew,-ec are invalid here
 
-            # Note: if sequence C region, -jif 10 is recommended, or -jif 80 is recommended
+            Note: if sequence C region, -jif 10 is recommended, or -jif 80 is recommended
               The rate of IMonitor output is multipled 100%
 
 
@@ -142,17 +142,17 @@ Note
 
   2. file format:
         2.1. Result/*.structure.gz format
-        #ID     fuction V_ref   D_ref   J_ref   CDR3_start      CDR3_end        CDR3(dna)       CDR3(aa)        3'V_del 5'D_del 3'D_del 5'J_del  VD_ins  DJ_ins  VJ_ins  strand  sequence        amino_acid      alignment_record
+        ID     fuction V_ref   D_ref   J_ref   CDR3_start      CDR3_end        CDR3(dna)       CDR3(aa)        3'V_del 5'D_del 3'D_del 5'J_del  VD_ins  DJ_ins  VJ_ins  strand  sequence        amino_acid      alignment_record
         2.2 Figures/*_overall_plot.pdf
         a general display for the statistics.
 
 #Testing
 
-        directory Test/ has a data for testing
-                FQ_run.sh:
-        perl ../IMonitor.pl -a data/XHS_1.fq.gz -b data/XHS_2.fq.gz -A1 data/1.adapter.list.gz -A2 data/2.adapter.list.gz -o . -n XHS -T TRB -k 100 -r /ifs1/ST_MED/USER/zhangwei/Immunity/Bioinf/pipeline/IMonitor_for_submit/Ref/TRB -d -m
-        FA_run.sh:
-        perl ../IMonitor.pl -i data/XHS.merged.fa.gz  -o . -n XHS -T TRB -k 100 -r /ifs1/ST_MED/USER/zhangwei/Immunity/Bioinf/pipeline/IMonitor_for_submit/Ref/TRB -d -m
+      directory Test/ has a data for testing
+      FQ_run.sh:
+      perl ../IMonitor.pl -a data/XHS_1.fq.gz -b data/XHS_2.fq.gz -A1 data/1.adapter.list.gz -A2 data/2.adapter.list.gz -o . -n XHS -T TRB -k 100 -r /ifs1/ST_MED/USER/zhangwei/Immunity/Bioinf/pipeline/IMonitor_for_submit/Ref/TRB -d -m
+      FA_run.sh:
+      perl ../IMonitor.pl -i data/XHS.merged.fa.gz  -o . -n XHS -T TRB -k 100 -r /ifs1/ST_MED/USER/zhangwei/Immunity/Bioinf/pipeline/IMonitor_for_submit/Ref/TRB -d -m
 
 
 
