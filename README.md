@@ -21,7 +21,7 @@ Perl and R need to be installed for you system
         Compulsory: for FASTQ format(paired-end read), -a -b -A1 -A2 -o -n -t -Rs; for FASTA format(single-end read), -i -o -n -t -Rs
         Optionally: others
         all the parameters have the detail introduction if you run "perl IMonitor.pl"
-   this step will create multiple directory and shells in Bin/.
+   this step will create multiple directory and shells in Bin/
         [parameters]
             -a      <S> full path of input fq file 1
             -b      <S> full path of input fq file 2
