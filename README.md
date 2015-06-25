@@ -11,13 +11,13 @@ Perl and R need to be installed for you system
 
 # Installation
 
-##1. Before use it, perl(https://www.perl.org/get.html)
-##2. Before use it,R(http://www.r-project.org/) need to be installed. and provide the installation paths for parameter -Rs
-##3. Download the IMonitor.tar.gz to your directory, uncompress it.
+   1. Before use it, perl(https://www.perl.org/get.html)
+   2. Before use it,R(http://www.r-project.org/) need to be installed. and provide the installation paths for parameter -Rs
+   3. Download the IMonitor.tar.gz to your directory, uncompress it.
 
 # Usage
 
-##1. Create shell
+###1. Create shell
    
    perl IMonitor.pl
         Compulsory: for FASTQ format(paired-end read), -a -b -A1 -A2 -o -n -t -Rs; for FASTA format(single-end read), -i -o -n -t -Rs
@@ -68,16 +68,16 @@ Perl and R need to be installed for you system
               The rate of IMonitor output is multipled 100%
 
 
-##2. Run shell
+###2. Run shell
    
-###2.1 it can easy to run the general sh in Bin/ directory 'Execute_all.sh': sh Execute_all.sh
-###2.2 run multiple shells in Bin/ directory seperately,so the *.blast.sh could be run in parallel.
+   2.1 it can easy to run the general sh in Bin/ directory 'Execute_all.sh': sh Execute_all.sh
+   2.2 run multiple shells in Bin/ directory seperately,so the *.blast.sh could be run in parallel.
             sh *.merge_fq_fq2fa.sh
             sh *.blast.*.sh
             sh *.structure.sh
             sh *.statistics.graph.sh
             sh *.rm.intermediate.file.sh
-###2.3 some warning is normal when run blast alignment because of blast parameter setting. such as "[blastall] WARNING: Could not calculate ungapped Karlin-Altschul parameters due to an invalid query sequence or its translation. Please verify the query sequence(s) and/or filtering options".
+   2.3 some warning is normal when run blast alignment because of blast parameter setting. such as "[blastall] WARNING: Could not calculate ungapped Karlin-Altschul parameters due to an invalid query sequence or its translation. Please verify the query sequence(s) and/or filtering options".
 
 # Output
 
