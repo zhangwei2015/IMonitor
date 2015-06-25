@@ -70,7 +70,9 @@ Perl and R need to be installed for you system
 ###2. Run shell
    
    1. it can easy to run the general sh in Bin/ directory 'Execute_all.sh'
-       sh Execute_all.sh
+    
+            sh Execute_all.sh
+
    2. run multiple shells in Bin/ directory seperately,so the *.blast.sh could be run in parallel.
    
               sh *.merge_fq_fq2fa.sh
