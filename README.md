@@ -69,15 +69,15 @@ Perl and R need to be installed for you system
 
 ###2. Run shell
    
-   2.1. it can easy to run the general sh in Bin/ directory 'Execute_all.sh'
+   1. it can easy to run the general sh in Bin/ directory 'Execute_all.sh'
        sh Execute_all.sh
-   2.2. run multiple shells in Bin/ directory seperately,so the *.blast.sh could be run in parallel.
+   2. run multiple shells in Bin/ directory seperately,so the *.blast.sh could be run in parallel.
             sh *.merge_fq_fq2fa.sh
             sh *.blast.*.sh
             sh *.structure.sh
             sh *.statistics.graph.sh
             sh *.rm.intermediate.file.sh
-   2.3. Warning:
+   3. Warning:
       some warning is normal when run blast alignment because of blast parameter setting. such as "[blastall] WARNING: Could not calculate ungapped Karlin-Altschul parameters due to an invalid query sequence or its translation. Please verify the query sequence(s) and/or filtering options".`
 
 # Output
