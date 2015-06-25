@@ -159,10 +159,12 @@ Perl and R need to be installed for you system
 # Testing
 
 directory Test/ has a data for testing
+
             FQ_run.sh:
             perl ../IMonitor.pl -a data/XHS_1.fq.gz -b data/XHS_2.fq.gz -A1 data/1.adapter.list.gz -A2 data/2.adapter.list.gz -o . -n XHS -T TRB -k 100 -r /ifs1/ST_MED/USER/zhangwei/Immunity/Bioinf/pipeline/IMonitor_for_submit/Ref/TRB -d -m
             FA_run.sh:
             perl ../IMonitor.pl -i data/XHS.merged.fa.gz  -o . -n XHS -T TRB -k 100 -r /ifs1/ST_MED/USER/zhangwei/Immunity/Bioinf/pipeline/IMonitor_for_submit/Ref/TRB -d -m
+            
 
 
 
