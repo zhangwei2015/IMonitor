@@ -74,7 +74,7 @@ Note
         sh *.statistics.graph.sh
         sh *.rm.intermediate.file.sh
 
-   2.3 some warning is normal when run blast alignment because of blast parameter setting. such as "[blastall] WARNING: Could not calculate ungapped Karlin-Altschul parameters due to an invalid query sequence or its translation. Please verify the query sequence(s) and/or filtering options"
+   2.3 some warning is normal when run blast alignment because of blast parameter setting. such as "[blastall] WARNING: Could not calculate ungapped Karlin-Altschul parameters due to an invalid query sequence or its translation. Please verify the query sequence(s) and/or filtering options".
 
 #Output
 
