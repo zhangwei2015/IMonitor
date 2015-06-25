@@ -86,7 +86,7 @@ Perl and R need to be installed for you system
 
 # Output
 
-   1. Directory
+###1. Directory
    
              --Bin
              --Align
@@ -149,12 +149,12 @@ Perl and R need to be installed for you system
             |   |-- *_rarefraction_curve.txt
             |   `-- *_seq_error_discard.gz
 
-2.  file format
-        1. Result/*.structure.gz format
+###2. file format
+      1. Result/*.structure.gz format
             
             ID     fuction V_ref   D_ref   J_ref   CDR3_start      CDR3_end        CDR3(dna)       CDR3(aa)        3'V_del 5'D_del 3'D_del 5'J_del  VD_ins  DJ_ins  VJ_ins  strand  sequence        amino_acid      alignment_record
 
-        2. Figures/*_overall_plot.pdf: a general display for the statistics.
+      2. Figures/*_overall_plot.pdf: a general display for the statistics.
 
 # Testing
 
