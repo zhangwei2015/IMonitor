@@ -75,11 +75,11 @@ Perl and R need to be installed for you system
 
    2. run multiple shells in Bin/ directory seperately,so the *.blast.sh could be run in parallel.
    
-              sh *.merge_fq_fq2fa.sh
-              sh *.blast.*.sh
-              sh *.structure.sh
-              sh *.statistics.graph.sh
-              sh *.rm.intermediate.file.sh
+            sh *.merge_fq_fq2fa.sh
+            sh *.blast.*.sh
+            sh *.structure.sh
+            sh *.statistics.graph.sh
+            sh *.rm.intermediate.file.sh
 
    3. Warning:
       some warning is normal when run blast alignment because of blast parameter setting. such as "[blastall] WARNING: Could not calculate ungapped Karlin-Altschul parameters due to an invalid query sequence or its translation. Please verify the query sequence(s) and/or filtering options".`
@@ -87,65 +87,67 @@ Perl and R need to be installed for you system
 # Output
 
    1. Directory
-        --Bin
-        --Align
-        --Result
-        --Figures
+   
+             --Bin
+             --Align
+             --Result
+              --Figures
 
-    use /Test data as a example, the output as follow:
-    |-- Align
-    |-- Bin
-    |   |-- Execute_all.sh
-    |   |-- *.blast.1.sh
-    |   |-- *.blast.2.sh
-    |   |-- *.blast.3.sh
-    |   |-- *.merge_fq_fq2fa.sh
-    |   |-- *.rm.intermediate.file.sh
-    |   |-- *.statistics.graph.sh
-    |   |-- *.structure.sh
-    |   `-- error.log
-    |-- Figures
-    |   |-- *_CDR3_freq.pdf
-    |   |-- *_CDR3_nt_length_dis.pdf
-    |   |-- *_Insert_size_dis.pdf
-    |   |-- *_J_NT_composition.pdf
-    |   |-- *_J_usage.pdf
-    |   |-- *_VJ_pairing_3d.pdf
-    |   |-- *_V_NT_composition.pdf
-    |   |-- *_V_usage.pdf
-    |   |-- *_mutation_dis.pdf
-    |   |-- *_overall_plot.pdf
-    |   |-- *_rarefract_curve.pdf
-    |   |-- *_vdj_del_len.pdf
-    |   |-- *_vdj_ins_len.pdf
-    |   `-- *_vdj_len_inCDR3.pdf
-    |-- Result
-    |   |-- Statistics.pl
-    |   |-- *.change_id.backup.gz
-    |   |-- *.discarded.gz
-    |   |-- *.lowabundance.filter.gz
-    |   |-- *.merged.fa.gz
-    |   |-- *.structure.gz
-    |   |-- *_CDR3_AA.frequency.gz
-    |   |-- *_CDR3_AA_section.stat
-    |   |-- *_CDR3_NT.frequency.gz
-    |   |-- *_CDR3_NT.length
-    |   |-- *_Clonotype_AA.frequency.gz
-    |   |-- *_Clonotype_NT.frequency.gz
-    |   |-- *_J_NT_composition.txt
-    |   |-- *_J_gene.usage
-    |   |-- *_VDJ_deletion_nt_len.dis
-    |   |-- *_VDJ_insertion_nt_len.dis
-    |   |-- *_VDJ_length_inCDR3.dis
-    |   |-- *_VJ_pairing.usage
-    |   |-- *_V_NT_composition.txt
-    |   |-- *_V_gene.usage
-    |   |-- *_bascial_filter_stat.txt
-    |   |-- *_further.stat.txt
-    |   |-- *_hypermutation.stat
-    |   |-- *_insert_size_len
-    |   |-- *_rarefraction_curve.txt
-    |   `-- *_seq_error_discard.gz
+    the output details as follow:
+    
+            |-- Align
+            |-- Bin
+            |   |-- Execute_all.sh
+            |   |-- *.blast.1.sh
+            |   |-- *.blast.2.sh
+            |   |-- *.blast.3.sh
+            |   |-- *.merge_fq_fq2fa.sh
+            |   |-- *.rm.intermediate.file.sh
+            |   |-- *.statistics.graph.sh
+            |   |-- *.structure.sh
+            |   `-- error.log
+            |-- Figures
+            |   |-- *_CDR3_freq.pdf
+            |   |-- *_CDR3_nt_length_dis.pdf
+            |   |-- *_Insert_size_dis.pdf
+            |   |-- *_J_NT_composition.pdf
+            |   |-- *_J_usage.pdf
+            |   |-- *_VJ_pairing_3d.pdf
+            |   |-- *_V_NT_composition.pdf
+            |   |-- *_V_usage.pdf
+            |   |-- *_mutation_dis.pdf
+            |   |-- *_overall_plot.pdf
+            |   |-- *_rarefract_curve.pdf
+            |   |-- *_vdj_del_len.pdf
+            |   |-- *_vdj_ins_len.pdf
+            |   `-- *_vdj_len_inCDR3.pdf
+            |-- Result
+            |   |-- Statistics.pl
+            |   |-- *.change_id.backup.gz
+            |   |-- *.discarded.gz
+            |   |-- *.lowabundance.filter.gz
+            |   |-- *.merged.fa.gz
+            |   |-- *.structure.gz
+            |   |-- *_CDR3_AA.frequency.gz
+            |   |-- *_CDR3_AA_section.stat
+            |   |-- *_CDR3_NT.frequency.gz
+            |   |-- *_CDR3_NT.length
+            |   |-- *_Clonotype_AA.frequency.gz
+            |   |-- *_Clonotype_NT.frequency.gz
+            |   |-- *_J_NT_composition.txt
+            |   |-- *_J_gene.usage
+            |   |-- *_VDJ_deletion_nt_len.dis
+            |   |-- *_VDJ_insertion_nt_len.dis
+            |   |-- *_VDJ_length_inCDR3.dis
+            |   |-- *_VJ_pairing.usage
+            |   |-- *_V_NT_composition.txt
+            |   |-- *_V_gene.usage
+            |   |-- *_bascial_filter_stat.txt
+            |   |-- *_further.stat.txt
+            |   |-- *_hypermutation.stat
+            |   |-- *_insert_size_len
+            |   |-- *_rarefraction_curve.txt
+            |   `-- *_seq_error_discard.gz
 
 
   2. file format:
