@@ -2,7 +2,7 @@ Manual of IMonitor
 =====
 # Introduction
 
-IMonitor - analyze the sequence data of immune repertoire sequenced by NGS. If paired-end reads(FASTQ) as input, it will be merged to single sequence according to overlap region. FASTA sequence as input is acceptable. It provides re-alignment algorithm to identify accurately V,D,J alleles.Sequencing error will be corrected. CDR3 region, deletion/insertion of VDJ will be identied and translate nucleotide into amino acid. Multiple statistics and graphs will be provied.
+IMonitor - analyze the sequence data of immune repertoire sequenced by NGS. If paired-end reads(FASTQ) as input, it will be merged to single sequence according to overlap region. FASTA sequence as input is acceptable. It provides re-alignment algorithm to identify accurately V,D,J alleles.Sequencing error will be corrected.CDR3 region can be identified by both VJ gene assignment and conserative region. deletion/insertion of VDJ will be identied and translate nucleotide into amino acid. Multiple statistics and graphs will be provied.
 
 # System Requirement
 
@@ -37,6 +37,7 @@ Perl and R need to be installed for you system
             -k      <I> read length [100]
 
             -d      <F> add the paremeter means consider D genes for analysis. For IGH,TRB is necessary
+            -c          logical value, for without V or J sequence, find the CDR3 by conservative region. V(YXC),J([WF]GXG)
             -jif    <I> J alignment identity for filtering,for C region sequenced,10 is recommended, or 80 is recommended[10]
             -vif    <I> V alignment identity for filtering [80]
             -r      <S> The reference directory [Bin/Ref/gene_type]
