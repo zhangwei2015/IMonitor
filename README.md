@@ -39,7 +39,7 @@ Perl and R need to be installed for you system
 
             -d      <F> add the paremeter means consider D genes for analysis. For IGH,TRB is necessary
             -c          logical value, for without V or J sequence, find the CDR3 by conservative region. V(YXC),J([WF]GXG)
-            -jif    <I> J alignment identity for filtering,for C region sequenced,10 is recommended, or 80 is recommended[10]
+            -jif    <I> J alignment identity for filtering [80]
             -vif    <I> V alignment identity for filtering [80]
             -r      <S> The reference directory [Bin/Ref/gene_type]
             -Q      <I> sequencing quality for filtering [15]
@@ -65,8 +65,7 @@ Perl and R need to be installed for you system
       perl IMonitor.pl
       Compulsory: -i -o -n -t -Rs
       Optionally: others, but -ew,-ec are invalid here
-   3. if sequence C region, -jif 10 is recommended, or -jif 80 is recommended
-   4. The rate of IMonitor output is multipled 100%
+   3. The rate of IMonitor output is multipled 100%
 
 
 ###2. Run shell
