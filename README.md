@@ -84,6 +84,14 @@ Perl and R need to be installed for you system
 
    3. Warning:
       some warning is normal when run blast alignment because of blast parameter setting. such as "[blastall] WARNING: Could not calculate ungapped Karlin-Altschul parameters due to an invalid query sequence or its translation. Please verify the query sequence(s) and/or filtering options".`
+   4. Reference(/Ref/*)
+   In the directory /Ref/*, it provides Human(IGH,TRB,IGK/L) germline sequences as the reference for analysis. These germline were dowoloaded from IMGT(www.imgt.org/).
+   However, you can provide your own reference, but it need to use a script for initialization. see example Ref/TRB/run.sh
+            sh Ref/bin/run.sh <V_sort.fa> <J_sort.fa> <cdr3region> <primer.txt> <gene_type> <out_dir> 1 [<D_sort.fa>]
+            If create the normal reference, then <flag> = 1 && <primer.txt> is invail and use any file input is OK
+            <V_sort.fa>/<J_sort.fa>/<D_sort.fa>: V/D/J germline FASTA sequences, with sorted
+            <cdr3region>: the position of CDR3 start in V and CDR3 end in J. e.g. V310J25, means CDR3 start from the 310the position of V, end at the 25th position of J
+            <gene_type>: gene name, e.g. IGH,TRB,TRA,IGKL
 
 # Output
 
@@ -162,9 +170,9 @@ Perl and R need to be installed for you system
 directory Test/ has a data for testing
 
             FQ_run.sh:
-            perl ../IMonitor.pl -a data/XHS_1.fq.gz -b data/XHS_2.fq.gz -A1 data/1.adapter.list.gz -A2 data/2.adapter.list.gz -o . -n XHS -T TRB -k 100 -r /ifs1/ST_MED/USER/zhangwei/Immunity/Bioinf/pipeline/IMonitor_for_submit/Ref/TRB -d -m -Rs /opt/blc/genome/biosoft/R/bin/Rscript
+            perl ../IMonitor.pl -a data/XHS_1.fq.gz -b data/XHS_2.fq.gz -A1 data/1.adapter.list.gz -A2 data/2.adapter.list.gz -o . -n XHS -T TRB -k 100 -r ../Ref/TRB -d -m -Rs /opt/blc/genome/biosoft/R/bin/Rscript
             FA_run.sh:
-            perl ../IMonitor.pl -i data/XHS.merged.fa.gz  -o . -n XHS -T TRB -k 100 -r /ifs1/ST_MED/USER/zhangwei/Immunity/Bioinf/pipeline/IMonitor_for_submit/Ref/TRB -d -m -Rs /opt/blc/genome/biosoft/R/bin/Rscript
+            perl ../IMonitor.pl -i data/XHS.merged.fa.gz  -o . -n XHS -T TRB -k 100 -r ../Ref/TRB -d -m -Rs /opt/blc/genome/biosoft/R/bin/Rscript
             
 
 
