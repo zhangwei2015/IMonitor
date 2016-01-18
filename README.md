@@ -174,6 +174,7 @@ directory Test/ has a data for testing
             FA_run.sh:
             perl ../IMonitor.pl -i data/XHS.merged.fa.gz  -o . -n XHS -T TRB -k 100 -r ../Ref/TRB -d -m -Rs /opt/blc/genome/biosoft/R/bin/Rscript
             
-
+#Reference
+Zhang W, Du Y, Su Z, Wang C, Zeng X, Zhang R, Hong X, Nie C, Wu J, Cao H, et al: IMonitor: A Robust Pipeline for TCR and BCR Repertoire Analysis. Genetics 2015, 201:459-472.
 
 
