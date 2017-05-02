@@ -87,6 +87,7 @@ Perl and R need to be installed for you system
    4. Reference(/Ref/*)
    In the directory /Ref/*, it provides Human(IGH,TRB,IGK/L) germline sequences as the reference for analysis. These germline were dowoloaded from IMGT(www.imgt.org/).
    However, you can provide your own reference, but it need to use a script for initialization. see example Ref/TRB/run.sh
+            
             sh Ref/bin/run.sh <V_sort.fa> <J_sort.fa> <cdr3region> <primer.txt> <gene_type> <out_dir> 1 [<D_sort.fa>]
             If create the normal reference, then <flag> = 1 && <primer.txt> is invail and use any file input is OK
             <V_sort.fa>/<J_sort.fa>/<D_sort.fa>: V/D/J germline FASTA sequences, with sorted
