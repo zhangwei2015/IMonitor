@@ -90,7 +90,11 @@ Perl and R need to be installed for you system
             
             sh Ref/bin/run.sh <V_sort.fa> <J_sort.fa> <cdr3region> <primer.txt> <gene_type> <out_dir> 1 [<D_sort.fa>]
             If create the normal reference, then <flag> = 1 && <primer.txt> is invail and use any file input is OK
-            <V_sort.fa>/<J_sort.fa>/<D_sort.fa>: V/D/J germline FASTA sequences, with sorted
+            <V_sort.fa>/<J_sort.fa>/<D_sort.fa>: V/D/J germline FASTA sequences, nucleotide sequences with gaps according to the IMGT unique numbering.
+                    gaps criterion: the conservative region( V(YXC),J([WF]GXG)) must be at the same positioins among all sequences. We need to determine the start and end positions for CDR3 region(<cdr3region>).
+                    <V_sort.fa>: you can download from "IMGT reference directory"(http://www.imgt.org/vquest/refseqh.html)
+                    <J_sort.fa>: you can add the gaps by yourself according to the IMGT database(http://www.imgt.org/IMGTrepertoire/Proteins/index.php#B or http://www.imgt.org/IMGTrepertoire/Proteins/)
+                    
             <cdr3region>: the position of CDR3 start in V and CDR3 end in J. e.g. V310J25, means CDR3 start from the 310the position of V, end at the 25th position of J
             <gene_type>: gene name, e.g. IGH,TRB,TRA,IGKL
 
