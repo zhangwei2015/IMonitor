@@ -13,10 +13,14 @@ Perl and R need to be installed for you system
 
    1. Before use it, perl(https://www.perl.org/get.html)
    2. Before use it,R(http://www.r-project.org/) need to be installed. and provide the installation paths for parameter -Rs
-   3. Download the IMonitor.tar.gz to your directory, uncompress it.
-      tar -zxvf IMonitor.tar.gz
+   3. Download the IMonitor-1.4.0.tar.gz to your directory, uncompress it.
+      tar -zxvf IMonitor-1.4.0.tar.gz
+
+# Version 1.4.0
+   
 
 # Usage
+   Note:  for the usage of 1.4.0, please see the new Readme in IMonitor-1.4.0.tar.gz!!!
 
 ###1. Create shell
    
