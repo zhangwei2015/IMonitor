@@ -20,7 +20,7 @@ Perl and R need to be installed for you system
    
 
 # Usage
-   !!!Note:  for the usage of 1.4.0, please see the new Readme in IMonitor-1.4.0.tar.gz!!!
+   !!!Note:  for the usage of 1.4.0, please run "perl IMonitor.pl" to see the details!!!
 
 ###1. Create shell
    
