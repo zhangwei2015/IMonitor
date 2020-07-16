@@ -6,8 +6,8 @@ IMonitor - analyze the sequence data of immune repertoire sequenced by NGS. If p
 
 # System Requirement
 
-It runs on 64-bit Linux systems. for 1Gb raw data as input, about maximum 2Gb memory would be required.
-Perl and R need to be installed for you system
+   It runs on 64-bit Linux systems. for 1Gb raw data as input, about maximum 2Gb memory would be required.
+   Perl and R need to be installed for you system
 
 # Installation
 
@@ -68,15 +68,16 @@ Perl and R need to be installed for you system
             -h      print help information
 
    Note:
-   #1. If  Pair-end(PE) sequencing FASTQ format as input, then:
-           perl IMonitor.pl
-        Compulsory: -a -b -o -n -t -Rs
+   
+   1. If  Pair-end(PE) sequencing FASTQ format as input, then:
+   perl IMonitor.pl
+      Compulsory: -a -b -o -n -t -Rs
        Optionally: others
-   #2. If Single-end(SE) sequencing FASTA format as input, then:
+   2. If Single-end(SE) sequencing FASTA format as input, then:
       perl IMonitor.pl
       Compulsory: -i -o -n -t -Rs
       Optionally: others, but -ew,-ec are invalid here
-   #3. If Single-end(SE) sequencing FASTQ format as input, then:
+   3. If Single-end(SE) sequencing FASTQ format as input, then:
       perl IMonitor.pl
       Compulsory: -iq -o -n -t -Rs
       Optionally: others
