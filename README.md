@@ -13,32 +13,31 @@ Perl and R need to be installed for you system
 
    1. Before use it, perl(https://www.perl.org/get.html)
    2. Before use it,R(http://www.r-project.org/) need to be installed. and provide the installation paths for parameter -Rs
-   3. Download the IMonitor-1.4.0.tar.gz to your directory, uncompress it.
-      tar -zxvf IMonitor-1.4.0.tar.gz
+   3. Download the IMonitor-1.4.1.tar.gz to your directory, uncompress it.
+      tar -zxvf IMonitor-1.4.1.tar.gz
 
-# Version 1.4.0
+# Version 1.4.1
    
 
 # Usage
-   !!!Note:  for the usage of 1.4.0, please run "perl IMonitor.pl" to see the details!!!
+   !!!Note:  for the usage of 1.4.1, please run "perl IMonitor.pl" to see the details!!!
 
 ###1. Create shell
    
    perl IMonitor.pl
-        Compulsory: for FASTQ format(paired-end read), -a -b -A1 -A2 -o -n -t -Rs; for FASTA format(single-end read), -i -o -n -t -Rs
+        Compulsory: for FASTQ format(paired-end read), -a -b -o -n -t -Rs; for FASTA format(single-end read), -i -o -n -t -Rs
         Optionally: others
         all the parameters have the detail introduction if you run "perl IMonitor.pl"
    this step will create multiple directory and shells in Bin/
        
-            [parameters]
+         [parameters]
             -a      <S> full path of input fq file 1
             -b      <S> full path of input fq file 2
-            -A1     <S> adaptor list file 1
-            -A2     <S> adaptor list file 2
-            -i      <S> single reads with FA format file
+            -i      <S> single reads with FASTA format file
+            -iq     <S> single reads with FASTQ format file
             -o      <S> output directory path
             -n      <S> sample name, used for prefix of ouput file
-            -t      <S> gene type. e.g. TRB, IGH
+            -t      <S> gene type. e.g. TRB, IGH 
             -k      <I> read length [100]
 
             -d      <F> add the paremeter means consider D genes for analysis. For IGH,TRB is necessary
@@ -52,24 +51,40 @@ Perl and R need to be installed for you system
             -f2     <I> Clonotype(nucleotide, ful-length) abundance filter [0]
             -m          logical value, used to analyze hyper-mutation
             -ew         logical value, sequencing error correction for whole sequence. but this need a long time to run,only for FASTQ files as input
-            -ec         logical value, sequencing error correction for only CDR3.only for FAST
-            Q files as input
-            -v      <I> used to calculate the base quality [64]
+            -ec         logical value, sequencing error correction for only CDR3.only for FASTQ files as input
+            -Qe     <I> the quality(as a cutoff) is used for sequencing error correction. [20](-ew or -ec is required) 
+            -adseq  <S>     3' adapter sequence
+            -adcut  <I>     cut sequence from adaptor index,unless performed -f/-r also in use
+                                    discard the read when the adaptor index of the read is less than INT
 
+            the next two options only for sequencing type
+            -v      <I> used to calculate the base quality [64]
+            -seqType <I> Sequence fq type, 0->old fastq(Hiseq2000), 1->new fastq(Hiseq4000)[default: 0]
+            old fastq id: @FCD1PB1ACXX:4:1101:1799:2201#GAAGCACG/2
+            new fastq id: @HISEQ:310:C5MH9ANXX:1:1101:3517:2043 2:N:0:TCGGTCAC
+        
             -mul    <I> split the fa into multiple parts for alignment [3]
-            -Rs     the R script directory.for a new system, this parameter is need to change[/opt/blc/genome/biosoft/R/bin/Rscript]
+            -Rs     the R script directory.for a new system, this parameter is need to change[/ifs1/ST_MED/USER/zhangwei/software/R-3.0.2/bin/Rscript]
             -h      print help information
 
    Note:
    1. If  Pair-end(PE) sequencing FASTQ format as input, then:
       perl IMonitor.pl
-      Compulsory: -a -b -A1 -A2 -o -n -t -Rs
+      Compulsory: -a -b -o -n -t -Rs
       Optionally: others
    2. If Single-end(SE) sequencing FASTA format as input, then:
       perl IMonitor.pl
       Compulsory: -i -o -n -t -Rs
       Optionally: others, but -ew,-ec are invalid here
-   3. The rate of IMonitor output is multipled 100%
+   3. If Single-end(SE) sequencing FASTQ format as input, then:
+      perl IMonitor.pl
+      Compulsory: -iq -o -n -t -Rs
+      Optionally: others
+      For Zebra sequencing(Single-end), Compulsory: -iq -o -n -t -Rs -v 33 [-Qe 25 (-ew or -ec is required)]
+
+
+   Note:
+   The rate of IMonitor output is multipled 100%
 
 
 ###2. Run shell
@@ -179,9 +194,11 @@ Perl and R need to be installed for you system
 directory Test/ has a data for testing
 
             FQ_run.sh:
-            perl ../IMonitor.pl -a data/XHS_1.fq.gz -b data/XHS_2.fq.gz -A1 data/1.adapter.list.gz -A2 data/2.adapter.list.gz -o . -n XHS -T TRB -k 100 -r ../Ref/TRB -d -m -Rs /opt/blc/genome/biosoft/R/bin/Rscript
+            perl ../IMonitor.pl -a data/XHS_1.fq.gz -b data/XHS_2.fq.gz -o . -n XHS -T TRB -k 100 -r ../Ref/TRB -d -m -Rs /opt/blc/genome/biosoft/R/bin/Rscript
             FA_run.sh:
             perl ../IMonitor.pl -i data/XHS.merged.fa.gz  -o . -n XHS -T TRB -k 100 -r ../Ref/TRB -d -m -Rs /opt/blc/genome/biosoft/R/bin/Rscript
+            SE_run.sh:
+            perl ../IMonitor.pl -iq data/Zebra_test.fq.gz -o . -n Zebra -t TRB --seqType 1 -v 33 -d -ec -mul 1 -Rs /data/Public_tools/R-4.0.2/bin/Rscript
             
 #Reference
 Zhang W, Du Y, Su Z, Wang C, Zeng X, Zhang R, Hong X, Nie C, Wu J, Cao H, et al: IMonitor: A Robust Pipeline for TCR and BCR Repertoire Analysis. Genetics 2015, 201:459-472.
