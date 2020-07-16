@@ -69,9 +69,9 @@ Perl and R need to be installed for you system
 
    Note:
    1. If  Pair-end(PE) sequencing FASTQ format as input, then:
-   perl IMonitor.pl
-     Compulsory: -a -b -o -n -t -Rs
-     Optionally: others
+         perl IMonitor.pl
+        Compulsory: -a -b -o -n -t -Rs
+       Optionally: others
    2. If Single-end(SE) sequencing FASTA format as input, then:
       perl IMonitor.pl
       Compulsory: -i -o -n -t -Rs
