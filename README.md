@@ -80,6 +80,7 @@ Perl and R need to be installed for you system
       perl IMonitor.pl
       Compulsory: -iq -o -n -t -Rs
       Optionally: others
+   
    For Zebra sequencing(Single-end), Compulsory: -iq -o -n -t -Rs -v 33 [-Qe 25 (-ew or -ec is required)]
 
 
