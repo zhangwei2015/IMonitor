@@ -14,14 +14,14 @@ IMonitor - analyze the sequence data of immune repertoire sequenced by NGS. If p
 
    1. Before use it, perl(https://www.perl.org/get.html)
    2. Before use it,R(http://www.r-project.org/) need to be installed. and provide the installation paths for parameter -Rs
-   3. Download the IMonitor-1.4.1.tar.gz to your directory, uncompress it.
-      tar -zxvf IMonitor-1.4.1.tar.gz
+   3. Download the IMonitor-1.4.5.tar.gz to your directory, uncompress it.
+      tar -zxvf IMonitor-1.4.5.tar.gz
 
-# Version 1.4.1
+# Version 1.4.5
    
 
 # Usage
-   !!!Note:  for the usage of 1.4.1, please run "perl IMonitor.pl" to see the details!!!
+   !!!Note:  for the usage of 1.4.5, please run "perl IMonitor.pl" to see the details!!!
 
 ###1. Create shell
    
@@ -38,7 +38,7 @@ IMonitor - analyze the sequence data of immune repertoire sequenced by NGS. If p
             -iq     <S> single reads with FASTQ format file
             -o      <S> output directory path
             -n      <S> sample name, used for prefix of ouput file
-            -t      <S> gene type. e.g. TRB, IGH 
+            -t      <S> gene type. e.g. TRA,TRB,TRD,TRG,IGH,IGK,IGL,IGKL,TRAB,TRDG,TR,IG,All. here, TRAB=TRA+TRB, TRDG=TRD+TRG,TR=TRA+TRB+TRD+TRG,IG=IGH+IGKL
             -k      <I> read length [100]
 
             -d      <F> add the paremeter means consider D genes for analysis. For IGH,TRB is necessary
@@ -53,41 +53,45 @@ IMonitor - analyze the sequence data of immune repertoire sequenced by NGS. If p
             -m          logical value, used to analyze hyper-mutation
             -ew         logical value, sequencing error correction for whole sequence. but this need a long time to run,only for FASTQ files as input
             -ec         logical value, sequencing error correction for only CDR3.only for FASTQ files as input
-            -Qe     <I> the quality(as a cutoff) is used for sequencing error correction. [20](-ew or -ec is required) 
+            -Qe     <I> the quality(as a cutoff) is used for sequencing error correction. [20](-ew or -ec is required)
             -adseq  <S>     3' adapter sequence
             -adcut  <I>     cut sequence from adaptor index,unless performed -f/-r also in use
                                     discard the read when the adaptor index of the read is less than INT
+            -addR1      logical value, add read1 for further analysis if the PE reads are failed to merge
+            -addR2      logical value, add read2 for further analysis if the PE reads are failed to merge
 
             the next two options only for sequencing type
             -v      <I> used to calculate the base quality [64]
             -seqType <I> Sequence fq type, 0->old fastq(Hiseq2000), 1->new fastq(Hiseq4000)[default: 0]
             old fastq id: @FCD1PB1ACXX:4:1101:1799:2201#GAAGCACG/2
             new fastq id: @HISEQ:310:C5MH9ANXX:1:1101:3517:2043 2:N:0:TCGGTCAC
-        
+
             -mul    <I> split the fa into multiple parts for alignment [3]
             -Rs     the R script directory.for a new system, this parameter is need to change[/ifs1/ST_MED/USER/zhangwei/software/R-3.0.2/bin/Rscript]
             -h      print help information
 
-   Note:
-   
-   1. If  Pair-end(PE) sequencing FASTQ format as input, then:
-      perl IMonitor.pl
-      Compulsory: -a -b -o -n -t -Rs
-      Optionally: others
-   2. If Single-end(SE) sequencing FASTA format as input, then:
-      perl IMonitor.pl
-      Compulsory: -i -o -n -t -Rs
-      Optionally: others, but -ew,-ec are invalid here
-   3. If Single-end(SE) sequencing FASTQ format as input, then:
-      perl IMonitor.pl
-      Compulsory: -iq -o -n -t -Rs
-      Optionally: others
-   
-   For Zebra sequencing(Single-end), Compulsory: -iq -o -n -t -Rs -v 33 [-Qe 25 (-ew or -ec is required)]
+Note
+            #1. If  Pair-end(PE) sequencing FASTQ format as input, then:
+                    perl IMonitor.pl
+                    Compulsory: -a -b -o -n -t -Rs
+                    Optionally: others
+            #2. If Single-end(SE) sequencing FASTA format as input, then:
+                    perl IMonitor.pl
+                    Compulsory: -i -o -n -t -Rs
+                    Optionally: others, but -ew,-ec are invalid here
+            #3. If Single-end(SE) sequencing FASTQ format as input, then:
+                    perl IMonitor.pl
+                    Compulsory: -iq -o -n -t -Rs
+                    Optionally: others
+                For Zebra sequencing(Single-end), Compulsory: -iq -o -n -t -Rs -v 33 [-Qe 25 (-ew or -ec is required)]
+            #4. If Pair-end(PE) sequencing FASTQ format as input, and add the single reads(the PE reads are failed to merge), then:
+                    perl IMonitor.pl
+                    Compulsory: -a -b -o -n -t -addR1(or -addR2)
+            #5. for the raw sequencing data including multiple chains, the paramter -t (TRAB,TRDG,TR,IG) can be used for analysis together
 
+            # Note:
+              The rate of IMonitor output is multipled 100%
 
-   Note:
-   The rate of IMonitor output is multipled 100%
 
 
 ###2. Run shell
