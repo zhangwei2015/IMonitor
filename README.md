@@ -71,23 +71,24 @@ IMonitor - analyze the sequence data of immune repertoire sequenced by NGS. If p
             -h      print help information
 
 Note
-            #1. If  Pair-end(PE) sequencing FASTQ format as input, then:
+
+            1. If  Pair-end(PE) sequencing FASTQ format as input, then:
                     perl IMonitor.pl
                     Compulsory: -a -b -o -n -t -Rs
                     Optionally: others
-            #2. If Single-end(SE) sequencing FASTA format as input, then:
+            2. If Single-end(SE) sequencing FASTA format as input, then:
                     perl IMonitor.pl
                     Compulsory: -i -o -n -t -Rs
                     Optionally: others, but -ew,-ec are invalid here
-            #3. If Single-end(SE) sequencing FASTQ format as input, then:
+            3. If Single-end(SE) sequencing FASTQ format as input, then:
                     perl IMonitor.pl
                     Compulsory: -iq -o -n -t -Rs
                     Optionally: others
                 For Zebra sequencing(Single-end), Compulsory: -iq -o -n -t -Rs -v 33 [-Qe 25 (-ew or -ec is required)]
-            #4. If Pair-end(PE) sequencing FASTQ format as input, and add the single reads(the PE reads are failed to merge), then:
+            4. If Pair-end(PE) sequencing FASTQ format as input, and add the single reads(the PE reads are failed to merge), then:
                     perl IMonitor.pl
                     Compulsory: -a -b -o -n -t -addR1(or -addR2)
-            #5. for the raw sequencing data including multiple chains, the paramter -t (TRAB,TRDG,TR,IG) can be used for analysis together
+            5. for the raw sequencing data including multiple chains, the paramter -t (TRAB,TRDG,TR,IG) can be used for analysis together
 
             # Note:
               The rate of IMonitor output is multipled 100%
